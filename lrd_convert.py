@@ -88,7 +88,8 @@ def main():
             container_output = st.container()
             container_output.text("")
             container_output.subheader("LRD Config")
-            container_output.write(json.dumps(out, ensure_ascii=False).replace(": NaN,", ": null,"))
+            # container_output.write(json.dumps(out, ensure_ascii=False, indent=4).replace(": NaN,", ": null,"))
+            st.code(json.dumps(out, ensure_ascii=False, indent=4).replace(": NaN,", ": null,"), language='json')
 
         except AttributeError:
             st.error("Please select a file before continuing")
