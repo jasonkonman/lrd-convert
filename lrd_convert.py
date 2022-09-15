@@ -35,7 +35,7 @@ def main():
             ### Put output json together
             out = {}
             out['questionnaireId'] = df_q.loc[0,'questionnaireid']
-            out['hideColumns'] = df_q['hidecolumns'].to_list()
+            out['hideColumns'] = df_q[df_q['hidecolumns'].notnull()]['hidecolumns'].to_list()
             out['columns'] = []
 
             # Table columns
