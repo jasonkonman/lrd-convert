@@ -59,7 +59,7 @@ def main():
                 t_row = {}
             
                 if row['valuetype'] == 'string':
-                    t_row['value'] = row['value']
+                    t_row['value'] = str(int(row['value']))
                     
                 elif row['valuetype'] == 'number':
                     if row['min'] == 'null':
