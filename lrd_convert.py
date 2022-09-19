@@ -31,6 +31,9 @@ def main():
                 df_c = pd.read_excel(input_file, sheet_name='columns')
                 df_t = pd.read_excel(input_file, sheet_name='thresholds')
 
+                df_t = df_t[df_t['tableheader'].notnull()]
+                df_c = df_c[df_c['tableheader'].notnull()]
+
     
             ### Put output json together
             out = {}
@@ -47,7 +50,7 @@ def main():
                 if row['valuetype'] == 'string':
                     j_row['precision'] = 0
                 else:
-                    j_row['precision'] = int(row['precision'])
+                    j_row['precision'] = str(row['precision'])
                     
                 j_row['id'] = []
                 j_row['id'].append(row['questionid'])
