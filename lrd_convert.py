@@ -50,7 +50,7 @@ def main():
                 if row['valuetype'] == 'string':
                     j_row['precision'] = 0
                 else:
-                    j_row['precision'] = str(row['precision'])
+                    j_row['precision'] = int(row['precision'])
                     
                 j_row['id'] = []
                 j_row['id'].append(row['questionid'])
@@ -62,7 +62,7 @@ def main():
                 t_row = {}
             
                 if row['valuetype'] == 'string':
-                    t_row['value'] = str(int(row['value']))
+                    t_row['value'] = str(row['value'])
                     
                 elif row['valuetype'] == 'number':
                     if row['min'] == 'null':
